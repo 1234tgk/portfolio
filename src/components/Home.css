@@ -1,0 +1,4 @@
+* {
+    /* inherit width from .main from App.css */
+    width: 100%;
+}
