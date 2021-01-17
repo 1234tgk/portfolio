@@ -2,59 +2,45 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import './Navbar.css';
 
+function StyledLink({children, to}) {
+    return (
+        <Link
+            activeClass='active'
+            to={to}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className='nav-scroll-link'
+        >
+            {children}
+        </Link>
+    );
+}
+
 function Navbar() {
     return (
         <nav className='navbar'>
             <div className='navbar-container'>
                 <ul className='nav-menu'>
                     <li className='nav-item'>
-                        <Link
-                            activeClass='active'
-                            to='home'
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            className='nav-scroll-link'
-                        >
+                        <StyledLink to='home'>
                             Home
-                            </Link>
+                        </StyledLink>
                     </li>
                     <li className='nav-item'>
-                        <Link
-                            activeClass='active'
-                            to='about'
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            className='nav-scroll-link'
-                        >
+                        <StyledLink to='about'>
                             About Me
-                            </Link>
+                        </StyledLink>
                     </li>
                     <li className='nav-item'>
-                        <Link
-                            activeClass='active'
-                            to='projects'
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            className='nav-scroll-link'
-                        >
+                    <StyledLink to='projects'>
                             Projects
-                            </Link>
+                        </StyledLink>
                     </li>
                     <li className='nav-item'>
-                        <Link
-                            activeClass='active'
-                            to='contact'
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset={-70}
-                            className='nav-scroll-link'
-                        >
+                    <StyledLink to='contact'>
                             Contact Me
-                            </Link>
+                        </StyledLink>
                     </li>
                 </ul>
             </div>
